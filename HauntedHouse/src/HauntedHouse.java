@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assertions.*;
 public class HauntedHouse {
@@ -21,9 +20,9 @@ public class HauntedHouse {
 
     public void refillCandyBowl(int amount) {
         // no negative candy allowed
-            if(amount>=0) {
-                candyCount += amount;
-            }
+        if(amount>=0) {
+            candyCount += amount;
+        }
     }
 
     public void trickOrTreat(int people){
@@ -73,4 +72,3 @@ public class HauntedHouse {
         return result;
     }
 }
-
