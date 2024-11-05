@@ -29,9 +29,14 @@ public class HauntedTest {
     }
 
     @Test
-    public void RefillCandyBowlTest(){
-       house.refillCandyBowl(20);
-       Assertions.assertEquals(30, house.getCandyCount());
+    public void RefillCandyBowlTestMIN(){
+       house.refillCandyBowl(0);
+       Assertions.assertEquals(10, house.getCandyCount());
+    }
+    @Test
+    public void RefillCandyBowlTestMax(){
+        house.refillCandyBowl(Integer.MAX_VALUE);
+        Assertions.assertEquals(Integer.MAX_VALUE, house.getCandyCount());
     }
 
     @Test
@@ -47,8 +52,14 @@ public class HauntedTest {
 
     @Test
     public void TooManyPeopleTest(){
-       house.trickOrTreat(1000);
+       house.trickOrTreat(Integer.MAX_VALUE);
        Assertions.assertEquals(0,house.getCandyCount());
+ }
+
+ @Test
+ public void NegativePeople(){
+       house.trickOrTreat(-1);
+        Assertions.assertEquals(10,house.getCandyCount());
  }
    @Test
     public void RunningLowTest(){

@@ -23,17 +23,23 @@ public class HauntedHouse {
         if(amount>=0) {
             candyCount += amount;
         }
+
+        if(getCandyCount()<0){
+            candyCount = Integer.MAX_VALUE;
+        }
     }
 
     public void trickOrTreat(int people){
 
+        if(people <= 0){
+            return;
+        }
         // only deduct if people is less than candyCount
         if(people<=candyCount) {
             candyCount = candyCount - people;
 
         }
         else{
-
             //more people than candy = candyCount = 0
             candyCount = 0;
         }
@@ -54,6 +60,7 @@ public class HauntedHouse {
             refillCandyBowl(50);
         }
         return candyCount;
+
     }
 
     public void Haunting() {
